@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .error {
+      color: red;
+      text-size-adjust: 40px;
+      margin-bottom: 40px;
+    }
+    .error2 {
+      color: rgb(0, 128, 128);
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login Error</h1>
+    <h2> <p class="error">Invalid username or password. Please try again.</p> </h2>
+    <p class="error2">if you still don't have account, what do you wait?</p>
+    <button class="btn" onclick="window.location.href = '/registepage';">Register</button>
+  </div>
+</body>
+</html>

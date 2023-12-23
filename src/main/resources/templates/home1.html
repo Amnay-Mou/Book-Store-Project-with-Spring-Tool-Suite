@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>J30 BOOK STORE</title>
+  <style>
+    /* Add your custom CSS styles here */
+     body {
+      font-family: Serif, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  background-image: linear-gradient(180deg, white, #11A0C3);
+	  padding: 5px;
+	}
+	
+	.top-left img {
+	  height: 70px;
+	  width: auto;
+	  padding-left: 60px;
+	}
+	.top-left p {
+	  font-family: Monospace, sans-serif;
+	  font-size: 24px;
+	  color: black;
+	  padding-left: 30px;
+	  animation: fadeIn 2.5s ease-in-out;
+	}
+	
+	@keyframes fadeIn {
+	  0% {
+	    opacity: 0;
+	  }
+	  100% {
+	    opacity: 1;
+	  }
+	}
+	
+    .top-right button {
+      margin-left: 10px;
+      font-size: 18px; /* Increased font size */
+      padding: 10px 20px; /* Increased padding */
+      border-radius: 5px; /* Added border radius */
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 1s ease; /* Added smooth transition */
+    }
+    
+    .top-right button:hover {
+      background-color: black; /* Darker color on hover */
+    }
+    
+    section {
+      overflow-x: hidden;
+    }
+    
+    .scrolling-zone {
+      height: 550px;
+      background-color: #1C9FB7; 
+      width: 4000px; /* Adjusted width based on Code 1 */
+      display: flex;
+      animation: scrollRight 12s linear infinite; /* Adjusted animation duration based on Code 1 */
+    }
+    
+    @keyframes scrollRight {
+      100% {
+        transform: translateX(-66.6666%);
+      }
+    }
+    
+    .scrolling-zone img {
+      height: 500px;
+      width: 500px; /* Adjusted width based on Code 1 */
+      margin-right: 100px;
+      padding-top: 30px;
+    }
+    
+    aside {
+      background-image: linear-gradient(180deg, #1C9FB7, #ADE2FF); /* Changed background color to bluesky */
+      padding: 10px;
+      
+    }
+    
+    .categories button {
+      margin-right: 230px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 20px; /* Increased font size */
+      padding: 13px 20px; /* Increased padding */
+      border-radius: 0px; /* Added border radius */
+      background-color: #1374CF;
+      width: 230px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 1s ease; /* Added smooth transition */
+      border-radius: 12px;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    
+    .categories button:hover {
+      background-color: #45a049; /* Darker color on hover */
+    }
+    
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+      background-image: linear-gradient(180deg, #11A0C3, white);
+    }
+    
+    .product {
+      width: 20%; /* Adjusted width to fit two products in one row */
+      margin-bottom: 20px;
+      padding-right: 50px;
+      padding-top: 50px;
+      text-align: center;
+      transition: transform 0.3s ease; 
+    }
+    
+    .product img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .product:hover {
+	  transform: scale(1.2); /* Increase the scale to make the image bigger */
+	}
+    
+    footer {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    /*--------------------------------------------------------------
+	# Desktop Navigation
+	--------------------------------------------------------------*/
+	@media (min-width: 1280px) {
+	  .navbar {
+	    padding: 0;
+	  }
+	  
+	  .navbar ul {
+	    margin: 0;
+	    padding: 0;
+	    display: flex;
+	    list-style: none;
+	    align-items: center;
+	  }
+	
+	  .navbar li {
+	    position: relative;
+	  }
+	
+	  .navbar a, .navbar a:focus {
+	    display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding: 10px 0 10px 30px;
+	    font-family: var(--font-primary);
+	    text-transform: uppercase;
+	    letter-spacing: 1px;
+	    font-size: 13px;
+	    font-weight: 400;
+	    color: white;
+	    white-space: nowrap;
+	    transition: 1s;
+	  }
+	
+	  .navbar a i,
+	  .navbar a:focus i {
+	    font-size: 12px;
+	    line-height: 0;
+	    margin-left: 5px;
+	  }
+	
+	  .navbar a:hover,
+	  .navbar .active,
+	  .navbar .active:focus,
+	  .navbar li:hover>a {
+	    color: #fff;
+	  }
+	
+	  .navbar .dropdown ul {
+	    display: block;
+	    position: absolute;
+	    left: 14px;
+	    top: calc(100% + 30px);
+	    margin: 0;
+	    padding: 10px 0;
+	    z-index: 99;
+	    opacity: 0;
+	    visibility: hidden;
+	    background: var(--color-secondary);
+	    transition: 0.3s;
+	    border-radius: 4px;
+	  	}
+	
+	  .navbar .dropdown ul li {
+	    min-width: 200px;
+	    background-color: black;
+	  }
+	
+	  .navbar .dropdown ul a {
+	    padding: 10px 20px;
+	    font-size: 15px;
+	    text-transform: none;
+	    font-weight: 400;
+	  }
+	
+	  .navbar .dropdown ul a i {
+	    font-size: 12px;
+	  }
+	
+	  .navbar .dropdown ul a:hover,
+	  .navbar .dropdown ul .active:hover,
+	  .navbar .dropdown ul li:hover>a {
+	    color: #fff;
+	    background-color: black;
+	  }
+	
+	  .navbar .dropdown:hover>ul {
+	    opacity: 1;
+	    top: 100%;
+	    visibility: visible;
+	  }
+	
+	  .navbar .dropdown .dropdown ul {
+	    top: 0;
+	    left: calc(100% - 30px);
+	    visibility: hidden;
+	  }
+	
+	  .navbar .dropdown .dropdown:hover>ul {
+	    opacity: 1;
+	    top: 0;
+	    left: 100%;
+	    visibility: visible;
+	  }
+	}
+  </style>
+  
+</head>
+<body>
+  <header>
+	  <div class="top-left">
+		  <a href="/home">
+			  <img src="/image/logo1.png" alt="Logo">
+          </a>
+	    <p>J30 Book Store</p>
+	  </div>
+	  <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href=" " class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="gallery.html">Nature</a></li>
+              <li><href="gallery.html">People</a></li>
+              <li><a href="gallery.html">Architecture</a></li>
+              <li><a href="gallery.html">Animals</a></li>
+              <li><a href="gallery.html">Sports</a></li>
+              <li><href="gallery.html">Travel</a></li>
+              <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Sub Menu 1</a></li>
+                  <li><a href="#">Sub Menu 2</a></li>
+                  <li><a href="#">Sub Menu 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+	  <div class="top-right">
+	    <button onclick="location.href='/login'">Login</button>
+	    <button onclick="location.href='/registepage'">Register</button>
+	  </div>
+	  
+	</header>
+
+  
+  <section>
+    <div class="scrolling-zone">
+      <!-- Add your 8 images here -->
+      <img src="/image/book1.png" alt="Image 1">
+      <img src="/image/book2.png" alt="Image 2">
+      <img src="/image/book3.png" alt="Image 3">
+      <img src="/image/book4.png" alt="Image 4">
+      <img src="/image/book5.png" alt="Image 5">
+      <img src="/image/book6.png" alt="Image 6">
+      <img src="/image/book7.png" alt="Image 7">
+      <img src="/image/book8.png" alt="Image 8">
+    </div>
+  </section>
+  
+  <aside>
+    <div class="categories">
+      <button onclick="location.href='/bookdctg'">Comic</button>
+      <button onclick="location.href='/bookdctg2'">Action</button>
+      <button onclick="location.href='/bookdctg3'">Adventure</button>
+      <button onclick="location.href='/bookdctg4'">Cartoon</button>
+    </div>
+  </aside>
+  
+  <main>
+	  <tr th:each="book:${numbookcat}">
+		  <div class="product">
+		      <a th:href="@{/bookdtls(id=${book.bookid})}">
+				  <img th:src="${book.pic}" alt="Product">
+			  </a>
+		      <h3 th:text="${book.bookname}"></h3>
+		      <p>ID: </p><p th:text="${book.bookid}"></p>
+		      <p>Price: </p><p th:text="${book.price}"></p>
+		      <p>Author: </p><p th:text="${book.author}"></p>
+		  </div>
+	  </tr>
+  </main>
+  
+  
+</body>
+<footer>
+    <div>
+      <p>&copy; 2023 J30 Book Store</p>
+      <p>Contact: amnaymou.org@gmail.com</p>
+    </div>
+    <div class="social-icons">
+      <img src="/image/fbicon.png" alt="Facebook">
+      <img src="/image/insicon.png" alt="Instagram">
+      <img src="/image/wechaticon.png" alt="Wechat">
+    </div>
+</footer>
+</html>

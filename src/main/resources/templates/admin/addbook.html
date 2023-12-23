@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Book </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f7f7f7;
+      background-image: url("/image/addbook.jpg");
+	  background-size: cover;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      padding-top: 20px;
+      color: darkblue;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    input[type="date"],
+    input[type="url"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    input[type="submit"] {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    @keyframes fadeIn {
+		0% {
+				 opacity: 0;
+			}
+		100% {
+				opacity: 1;
+			}
+	}
+	
+	.container {
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+		animation: fadeIn 1s ease-in-out;
+	}
+	.footer {
+	      text-align: left;
+	}
+	.footer img {
+	      width: 450px;
+	      height: 300px;
+	      animation: fadeIn 2s ease-in-out;
+	}
+  </style>
+</head>
+<body>
+  <h1><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Add Book to J30 Library</h1>
+  <form class="container" action="addnewbook" method="post">
+    
+    <label for="bookName">Book Name:</label>
+    <input type="text" id="bookName" name="bookname" required>
+    
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" required>
+    
+    <label for="update">Update (Date):</label>
+    <input type="date" id="update" name="update" required>
+    
+    <label for="pic">Picture (Image URL):</label>
+    <input type="text" id="pic" name="pic" required>
+    
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required>
+    
+    <label for="details">Details:</label>
+    <textarea id="details" name="details" required></textarea>
+    
+    <label for="category">Category:</label>
+    <input type="number" id="category" name="category" required>
+    
+    <label for="comment">Comment:</label>
+    <textarea id="comment" name="comment" required></textarea>
+    
+    <input type="submit" value="Add Book">
+  </form>
+</body>
+<div class="footer">
+	<img src="/image/adminlogo.png" alt="Footer Logo">
+</div>
+</html>

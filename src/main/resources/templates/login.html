@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+	  body {
+		  background-image: url("/image/logback.jpg");
+		  background-size: cover;
+		}
+    .container {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 40px;
+      margin-top: 150px;
+      background-color: #ECE0C7;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+    .container h2{
+		font-family: Monospace, serif;
+		font-size: 40px;
+		color: white;
+		animation: fadeIn 1.2s ease-in-out;
+	}
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+    .login-btn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .login-btn:disabled {
+      background-color: white;
+      cursor: not-allowed;
+      color: black;
+    }
+    @keyframes fadeIn {
+	  0% {
+	    opacity: 0;
+	  }
+	  100% {
+	    opacity: 1;
+	  }
+	}
+	.footer {
+      text-align: right;
+      margin-top: 150px;
+    }
+
+    .footer img {
+      width: 450px;
+      height: 300px;
+      animation: fadeIn 4s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form action="deallogin" method="post">
+      <div class="form-group">
+        <label for="Email">Email:</label>
+        <input type="Email" id="Email" name=Email required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name=password required>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="radio" name="radio" id="radio" required>
+          I agree to the terms and conditions
+        </label>
+      </div>
+      <button type="submit" class="login-btn" id="loginBtn" disabled>Login</button>
+    </form>
+  </div>
+
+  <script>
+    const radioBtn = document.getElementById('radio');
+    const loginBtn = document.getElementById('loginBtn');
+
+    radioBtn.addEventListener('change', function() {
+      loginBtn.disabled = !this.checked;
+    });
+  </script>
+</body>
+	<div class="footer">
+    	<img src="/image/loginlogo.png" alt="Footer Logo">
+    </div>
+</html>

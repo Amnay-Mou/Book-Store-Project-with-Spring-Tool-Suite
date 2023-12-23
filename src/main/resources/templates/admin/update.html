@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Book Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("/image/upbg.jpg");
+      background-size: cover;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      font-family: Monospace, serif;
+      color: white;
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    
+    input {
+      margin-top: 5px;
+      padding: 15px;
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>UPDATE Your Book Information</h1>
+  <form th:each="book:${numbook}" action="updt" method="post" class="vv">
+    <label for="name">BookID:</label>
+    <input type="number" name="bookid" th:value="${book.bookid}" required readonly>
+    <br>
+    <label for="name">BookName:</label>
+    <input type="text" name="bookname" th:value="${book.bookname}" required>
+    <br>
+
+    <label for="price">Price:</label>
+    <input type="number" name="price" th:value="${book.price}" required>
+    <br>
+
+    <label for="text">PuDate:</label>
+    <input type="text" name="pic" th:value="${book.pic}" required>
+    <br>
+
+    <label for="text">PuDate:</label>
+    <input type="date" name="update" th:value="${book.update}" required>
+    <br>
+
+    <label for="author">Author:</label>
+    <input type="text" name="author" th:value="${book.author}" required>
+    <br>
+
+    <label for="description">Description:</label>
+    <input type="text" name="details" th:value="${book.details}" required>
+    <br>
+
+    <label for="category">Category:</label>
+    <input type="number" name="category" th:value="${book.category}" required>
+    <br>
+
+    <label for="comment">Comment:</label>
+    <input type="number" name="comment" th:value="${book.comment}" required>
+    <br>
+
+    <button type="submit" id="addButton">Update Book</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html xmlns="http://www.thymeleaf.org">
+<head>
+	<title>List all Books</title>
+	<style>
+		body{
+			background-image: linear-gradient(180deg, white, #110DF1);
+		}
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 8px;
+			border: 1px solid black;
+			max-height: 250px;
+			max-width: 250px;
+		}
+		body h1{
+			text-align: center;
+			margin-bottom: 120px;
+			color: #110DF1;
+			padding: 100px;
+			font-family: Monospace, sans-serif;
+		}
+		th {
+			color: red;
+			background-color: #11A0C3;
+		}
+		td {
+			color: black;
+			background-color: white;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>List all Messages</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Number</th>
+				<th>Username</th>
+				<th>problem</th>
+				<th>Messsage</th>
+			</tr>
+		</thead>
+		<body>
+			<tr th:each="contactus:${allcontact}">
+				<td th:text="${contactus.num}"></td>
+				<td th:text="${contactus.username}"></td>
+				<td th:text="${contactus.problem}"></td>
+				<td th:text="${contactus.message}"></td>
+				<td><a th:href="@{/deletemssg(id=${contactus.num})}" >Delete</a></td>
+			</tr>
+		</body>
+	</table>
+</body>
+</html>

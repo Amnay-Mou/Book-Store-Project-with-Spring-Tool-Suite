@@ -1,0 +1,77 @@
+<html xmlns="http://www.thymeleaf.org">
+<head>
+	<title>List all Books</title>
+	<style>
+		body {
+			background-image: linear-gradient(180deg, white, rgb(255, 128, 0));
+	  		background-size: cover;
+		}
+		body h1{
+			text-align: center;
+			font-family: Monospace, sans-serif;
+			margin-bottom: 120px;
+			padding: 100px;
+			color: crimson;
+		}
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 8px;
+			border: 1px solid black;
+			max-height: 250px;
+			max-width: 250px;
+		}
+		img {
+			max-height: 250px;
+			max-width: 250px;
+		}
+	</style>
+</head>
+<body>
+	<h1>List all Books</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>BookID</th>
+				<th>BookName</th>
+				<th>Author</th>
+				<th>UpDate</th>
+				<th>Pic</th>
+				<th>Price</th>
+				<th>Details</th>
+				<th>Category</th>
+				<th>Comment</th>
+				<th>Update price</th>
+				<th>Delete</th>
+				<th>Update</th>
+			</tr>
+		</thead>
+		<body>
+			<tr th:each="book:${allbooks}">
+				<td th:text="${book.bookid}"></td>
+				<td th:text="${book.bookname}"></td>
+				<td th:text="${book.author}"></td>
+				<td th:text="${book.update}"></td>
+				<td><img th:src="${book.pic}"></td>
+				<td th:text="${book.price}"></td>
+				<td th:text="${book.details}"></td>
+				<td th:text="${book.category}"></td>
+				<td th:text="${book.comment}"></td>
+				<td>
+					<form action="/admin/update" method="post"> 
+						<input type="hidden" name="id" th:value="${book.bookid}">
+						<p>price:<input type="number" name=price></p>
+						<p><input type="submit" value=update></p>
+					</form>
+				</td>
+				<td><a th:href="@{/admin/delete(id=${book.bookid})}" >Delete</a></td>
+				<td><a th:href="@{/getidd(id=${book.bookid})}" >Update</a></td>
+			</tr>
+		</body>
+	</table>
+</body>
+</html>
+
+
