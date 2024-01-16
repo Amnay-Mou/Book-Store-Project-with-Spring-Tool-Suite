@@ -25,3 +25,6 @@ Contact Us:
 ![contact us](https://github.com/Amnay-Mou/Book-Store-Project-with-Spring-Tool-Suite/assets/112958107/1948816f-4e99-4a46-b2e3-d54fb5f7a7a5)
 
 DATABASE (Just to take idea about The Database):
+![DB1](https://github.com/Amnay-Mou/Book-Store-Project-with-Spring-Tool-Suite/assets/112958107/1610a335-99d3-4140-96ad-0be046457b68)
+![DB2](https://github.com/Amnay-Mou/Book-Store-Project-with-Spring-Tool-Suite/assets/112958107/1a26ff2c-e9e8-4a43-93ae-9d368b9f4175)
+![DB3](https://github.com/Amnay-Mou/Book-Store-Project-with-Spring-Tool-Suite/assets/112958107/93673326-b720-4acb-9f92-e0b01ec476bc)
